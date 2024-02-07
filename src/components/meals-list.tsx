@@ -76,7 +76,7 @@ export default component$<Props>((props) => {
                 <button class={"roll-button"} onClick$={rollMeal}>{props.name} würfeln</button>
                 <p class={"reset"} onClick$={() => selectedMeals.value = []}>Auswahl zurücksetzen</p>
             </div>
-            {rollIsFinished && <div><p>Preis: €</p></div>}
+            {rollIsFinished.value && <div><p>Preis: €</p></div>}
             {props.categories.map((category) => (
                 <div key={category.id}>
                     <h3>{category.name}</h3>

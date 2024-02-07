@@ -1,9 +1,10 @@
 import {component$} from "@builder.io/qwik";
-import {DocumentHead, routeLoader$} from "@builder.io/qwik-city";
-import {PrismaClient} from "@prisma/client";
+import type {DocumentHead} from "@builder.io/qwik-city";
+import { routeLoader$} from "@builder.io/qwik-city";
 import MealsList from "~/components/meals-list";
+import prisma from "~/lib/prisma";
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 export const useGetMeals = routeLoader$(async () => {
     const meals = await prisma.item.findMany();
     return meals;

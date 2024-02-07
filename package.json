@@ -20,6 +20,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "lint:fix": "eslint --fix \"src/**/*.ts*\"",
     "postinstall": "prisma generate",
     "preview": "qwik build preview && vite preview --open",
     "prisma:generate": "prisma generate",
@@ -29,9 +30,12 @@
     "qwik": "qwik"
   },
   "devDependencies": {
+    "@auth/core": "^0.13.0",
     "@builder.io/qwik": "^1.4.4",
+    "@builder.io/qwik-auth": "0.1.1",
     "@builder.io/qwik-city": "^1.4.4",
     "@prisma/client": "5.9.1",
+    "@types/bcryptjs": "^2.4.6",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.6",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
@@ -46,6 +50,7 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "sharp": "^0.33.2"
   }
 }
