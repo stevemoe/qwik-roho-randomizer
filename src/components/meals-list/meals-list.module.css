@@ -1,0 +1,41 @@
+.bg {
+    background-color: rgb(149, 138, 104);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.rollBox {
+    height: 16rem;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(241, 237, 225);
+
+}
+
+.rollBoxContent {
+    height: 100%;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    /*justify-content: start;*/
+}
+
+.rollButton {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset {
+    font-size: 0.8rem;
+    color: rgb(149, 138, 104);
+    cursor: pointer;
+}
