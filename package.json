@@ -10,7 +10,7 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "prisma generate && qwik build",
+    "build": "prisma generate --no-engine && qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/vercel-edge/vite.config.ts",

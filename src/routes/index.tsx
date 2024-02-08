@@ -1,6 +1,6 @@
 import {component$} from "@builder.io/qwik";
 import type {DocumentHead} from "@builder.io/qwik-city";
-import { routeLoader$} from "@builder.io/qwik-city";
+import {routeLoader$} from "@builder.io/qwik-city";
 import MealsList from "~/components/meals-list/meals-list";
 import prisma from "~/lib/prisma";
 
@@ -11,10 +11,7 @@ export const useGetMeals = routeLoader$(async () => {
 })
 
 export const useGetCategories = routeLoader$(async () => {
-    // @ts-ignore
-    const categories = await prisma.category.findMany({cacheStrategy: {
-            ttl: 3600,
-        },});
+    const categories = await prisma.category.findMany();
     // console.log(categories)
     return categories;
 })

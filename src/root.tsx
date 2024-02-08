@@ -16,6 +16,8 @@ export default component$(() => {
    * Don't remove the `<head>` and `<body>` elements.
    */
 
+  console.log("Hello from QwikCity!")
+
   return (
     <QwikCityProvider>
       <head>
