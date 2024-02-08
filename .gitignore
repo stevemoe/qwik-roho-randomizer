@@ -45,3 +45,8 @@ lerna-debug.log*
 # Vercel
 .vercel
 .env*.local
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
