@@ -4,6 +4,9 @@ import baseConfig from "../../vite.config";
 
 export default extendConfig(baseConfig, () => {
   return {
+    define: {
+      __APP_ENV__: process.env.VITE_VERCEL_ENV,
+    },
     build: {
       ssr: true,
       rollupOptions: {
