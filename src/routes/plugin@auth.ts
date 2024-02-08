@@ -2,10 +2,10 @@ import {serverAuth$} from "@builder.io/qwik-auth";
 import type {Provider} from "@auth/core/providers";
 import Credentials from "@auth/core/providers/credentials";
 import { compareSync } from "bcrypt-ts";
-import {PrismaClient} from "@prisma/client";
+import prisma from "~/lib/prisma";
 
 export async function getUserByName(name: string) {
-    const prisma = new PrismaClient();
+    // const prisma = new PrismaClient();
     return prisma.user.findUnique({
         where: {
             name,
