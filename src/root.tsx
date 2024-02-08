@@ -20,6 +20,7 @@ export default component$(() => {
   console.log(process.env.NODE_ENV)
   console.log(process.env.TEST)
   console.log(process.env.POSTGRES_DATABASE)
+  console.log(process.env.VITE_VERCEL_ENV)
 
 
   return (
