@@ -21,6 +21,7 @@ export default component$(() => {
   console.log(process.env["TEST"])
   console.log(process.env["VITE_VERCEL_TEST"])
   console.log(process.env["VITE_VERCEL_TEST"])
+  console.log(process.env.VITE_HELLO)
 
 
   return (

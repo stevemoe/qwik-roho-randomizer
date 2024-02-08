@@ -31,6 +31,7 @@ export default component$(() => {
 
     return (
         <>
+            <h1>{process.env.VITE_HELLO}</h1>
             <MealsList meals={meals.value} categories={starterCategories} name={"Vorspeise"}/>
             <MealsList meals={meals.value} categories={starterCategories} name={"Vorspeise"}/>
             <MealsList meals={meals.value} categories={mainCategories} name={"Hauptgericht"}/>
