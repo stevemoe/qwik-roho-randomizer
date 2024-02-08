@@ -8,7 +8,8 @@ export default defineConfig((): UserConfig => {
         resolve: {
             alias: {
                 ".prisma/client/wasm": "./node_modules/.prisma/client/wasm.js",
-                ".prisma/client/index-browser": "./node_modules/.prisma/client/index-browser.js"
+                ".prisma/client/index-browser": "./node_modules/.prisma/client/index-browser.js",
+                ".prisma/client/edge": "./node_modules/.prisma/client/edge.js",
             }
         },
         plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
