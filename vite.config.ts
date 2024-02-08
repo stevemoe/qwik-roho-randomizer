@@ -25,6 +25,9 @@ export default defineConfig((): UserConfig => {
         },
         optimizeDeps: {
             include: ['@auth/core']
-        }
+        },
+        define: {
+            __APP_ENV__: process.env.VITE_VERCEL_ENV,
+        },
     };
 });
