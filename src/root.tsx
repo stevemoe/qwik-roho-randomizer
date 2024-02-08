@@ -17,6 +17,8 @@ export default component$(() => {
    */
 
   console.log("Hello from QwikCity!")
+  console.log(process.env.TEST)
+
 
   return (
     <QwikCityProvider>
