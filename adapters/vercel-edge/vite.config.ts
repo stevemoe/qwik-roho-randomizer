@@ -5,9 +5,7 @@ import baseConfig from "../../vite.config";
 export default extendConfig(baseConfig, () => {
   return {
     build: {
-      ssr: {
-        noExternal: ['crypto']
-      } as any, // Add type assertion here
+      ssr: true,
       rollupOptions: {
         input: ["src/entry.vercel-edge.tsx", "@qwik-city-plan"],
       },
