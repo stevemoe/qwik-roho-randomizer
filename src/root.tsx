@@ -17,7 +17,7 @@ export default component$(() => {
    */
 
   console.log("Hello from QwikCity!")
-  console.log(process.env)
+  console.log(process.env.NODE_ENV)
 
 
   return (
