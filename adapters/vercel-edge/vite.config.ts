@@ -1,30 +1,17 @@
-import {defineConfig, type UserConfig} from "vite";
-import {qwikVite} from "@builder.io/qwik/optimizer";
-import {qwikCity} from "@builder.io/qwik-city/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { vercelEdgeAdapter } from "@builder.io/qwik-city/adapters/vercel-edge/vite";
+import { extendConfig } from "@builder.io/qwik-city/vite";
+import baseConfig from "../../vite.config";
 
-export default defineConfig((): UserConfig => {
+export default extendConfig(baseConfig, () => {
   return {
-    resolve: {
-      alias: {
-        ".prisma/client/wasm": "./node_modules/.prisma/client/wasm.js",
-        ".prisma/client/index-browser": "./node_modules/.prisma/client/index-browser.js",
-        ".prisma/client/edge": "./node_modules/.prisma/client/edge.js",
-      }
-    },
-    plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
-    server: {
-      headers: {
-        "Cache-Control": "public, max-age=0",
+
+    build: {
+      ssr: true,
+      rollupOptions: {
+        input: ["src/entry.vercel-edge.tsx", "@qwik-city-plan"],
       },
+      outDir: ".vercel/output/functions/_qwik-city.func",
     },
-    preview: {
-      headers: {
-        "Cache-Control": "public, max-age=600",
-      },
-    },
-    optimizeDeps: {
-      include: ['@auth/core']
-    }
+    plugins: [vercelEdgeAdapter()],
   };
 });

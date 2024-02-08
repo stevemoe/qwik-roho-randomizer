@@ -6,12 +6,15 @@ import prisma from "~/lib/prisma";
 
 // const prisma = new PrismaClient();
 export const useGetMeals = routeLoader$(async () => {
-    const meals = await prisma.item.findMany();
+    const meals = await prisma.item.findMany({});
     return meals;
 })
 
 export const useGetCategories = routeLoader$(async () => {
-    const categories = await prisma.category.findMany();
+    // @ts-ignore
+    const categories = await prisma.category.findMany({cacheStrategy: {
+            ttl: 3600,
+        },});
     // console.log(categories)
     return categories;
 })

@@ -31,6 +31,7 @@
     "qwik": "qwik"
   },
   "dependencies": {
+    "@prisma/extension-accelerate": "^0.6.3",
     "bcrypt-ts": "^5.0.1",
     "sharp": "^0.33.2"
   },
@@ -39,7 +40,7 @@
     "@builder.io/qwik": "^1.4.4",
     "@builder.io/qwik-auth": "0.1.1",
     "@builder.io/qwik-city": "^1.4.4",
-    "@prisma/client": "5.9.1",
+    "@prisma/client": "^5.9.1",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.6",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
