@@ -19,7 +19,7 @@ export default component$(() => {
   console.log("Hello from QwikCity!")
   console.log(process.env.NODE_ENV)
   console.log(process.env.TEST)
-  console.log(process.env.POSTGRES_DATABASE)
+  console.log(process.env.VITE_DATABASE_URL)
   console.log(process.env.VITE_VERCEL_ENV)
 
 
