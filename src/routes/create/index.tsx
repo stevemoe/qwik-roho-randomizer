@@ -1,11 +1,13 @@
 import {component$} from "@builder.io/qwik";
 import {Form, routeAction$, z, zod$} from "@builder.io/qwik-city";
 import prisma from "~/lib/prisma";
-import bcrypt from "bcryptjs";
+import {genSaltSync, hashSync} from "bcrypt-ts";
 
 export const useCreateUser = routeAction$(
     async (data) => {
-    data.password = await bcrypt.hash(data.password, 10);
+        const salt = genSaltSync(10);
+        data.password = hashSync(data.password, salt);
+        // data.password = await bcrypt.hash(data.password, 10);
         const user = await prisma.user.create({
             data,
         });

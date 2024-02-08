@@ -2,7 +2,7 @@ import {serverAuth$} from "@builder.io/qwik-auth";
 import type {Provider} from "@auth/core/providers";
 import Credentials from "@auth/core/providers/credentials";
 import prisma from "~/lib/prisma";
-import bcrypt from 'bcryptjs';
+import { compareSync } from "bcrypt-ts";
 
 export async function getUserByName(name: string) {
     return prisma.user.findUnique({
@@ -20,7 +20,7 @@ export async function checkUser(username: string, password: string) {
         throw new Error('User not found');
     }
 
-    const match = await bcrypt.compare(password, user.password);
+    const match = compareSync(password, user.password);
 
     if (match) {
         return user;

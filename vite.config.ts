@@ -5,6 +5,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig((): UserConfig => {
     return {
+        resolve: {
+            alias: {
+                ".prisma/client/wasm": "./node_modules/.prisma/client/edge.js"
+            }
+        },
         plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
         server: {
             headers: {
