@@ -20,7 +20,8 @@ export default component$(() => {
   console.log(process.env.NODE_ENV)
   console.log(process.env["TEST"])
   console.log(process.env["VITE_VERCEL_TEST"])
-  console.log(process.env["VITE_VERCEL_TEST"])
+  console.log(process.env["VITE_DATABASE_URL"])
+  console.log(process.env.VITE_DATABASE_URL)
   console.log(process.env.VITE_HELLO)
 
 
